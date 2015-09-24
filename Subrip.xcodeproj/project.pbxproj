@@ -12,6 +12,8 @@
 		D343D1271BB400730084323B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D343D1261BB400730084323B /* Assets.xcassets */; };
 		D343D12A1BB400730084323B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D343D1281BB400730084323B /* Main.storyboard */; };
 		D343D1351BB400730084323B /* SubripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343D1341BB400730084323B /* SubripTests.swift */; };
+		D343D1401BB410F70084323B /* SubtitleConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343D13F1BB410F70084323B /* SubtitleConverter.swift */; settings = {ASSET_TAGS = (); }; };
+		D343D1421BB413650084323B /* SubtitleLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343D1411BB413650084323B /* SubtitleLine.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		D343D1301BB400730084323B /* SubripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D343D1341BB400730084323B /* SubripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubripTests.swift; sourceTree = "<group>"; };
 		D343D1361BB400730084323B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D343D13F1BB410F70084323B /* SubtitleConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleConverter.swift; sourceTree = "<group>"; };
+		D343D1411BB413650084323B /* SubtitleLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				D343D1261BB400730084323B /* Assets.xcassets */,
 				D343D1281BB400730084323B /* Main.storyboard */,
 				D343D12B1BB400730084323B /* Info.plist */,
+				D343D13F1BB410F70084323B /* SubtitleConverter.swift */,
+				D343D1411BB413650084323B /* SubtitleLine.swift */,
 			);
 			path = Subrip;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D343D1251BB400730084323B /* ViewController.swift in Sources */,
+				D343D1421BB413650084323B /* SubtitleLine.swift in Sources */,
+				D343D1401BB410F70084323B /* SubtitleConverter.swift in Sources */,
 				D343D1231BB400730084323B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
