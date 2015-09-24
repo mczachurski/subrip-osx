@@ -384,6 +384,7 @@
 				D343D13B1BB400730084323B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D343D13C1BB400730084323B /* Build configuration list for PBXNativeTarget "SubripTests" */ = {
 			isa = XCConfigurationList;
@@ -392,6 +393,7 @@
 				D343D13E1BB400730084323B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
