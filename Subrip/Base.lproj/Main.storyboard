@@ -692,20 +692,23 @@
                                     <constraint firstAttribute="height" constant="17" id="CZ9-G4-apl"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="Y2r-gf-9wI">
+                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" id="Y2r-gf-9wI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="btv-nt-0XW">
-                                <rect key="frame" x="204" y="80" width="127" height="22"/>
+                                <rect key="frame" x="204" y="80" width="111" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="mWY-Ro-MFQ"/>
+                                    <constraint firstAttribute="height" constant="22" id="8nx-KU-hC3"/>
                                 </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="" drawsBackground="YES" id="QIY-Vq-xbk">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="tSG-Ol-6ab"/>
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="tSG-Ol-6ab">
+                                        <real key="minimum" value="0.0"/>
+                                        <real key="maximum" value="100"/>
+                                    </numberFormatter>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -733,19 +736,19 @@
                                     <constraint firstAttribute="width" constant="78" id="zTW-tx-ikZ"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Frames:" id="ZAH-S1-UPb">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Frames:" id="ZAH-S1-UPb">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="If0-6w-9aZ">
-                                <rect key="frame" x="204" y="52" width="127" height="22"/>
+                                <rect key="frame" x="204" y="52" width="111" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="lgN-Ev-pM5"/>
+                                    <constraint firstAttribute="height" constant="22" id="sxS-Ab-X7t"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1MI-Ma-EG7">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="1MI-Ma-EG7">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="ee8-iq-IQw"/>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -768,32 +771,60 @@
                                     <constraint firstAttribute="height" constant="17" id="xWd-jF-om9"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Offset" id="UZO-ax-yq8">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Offset:" id="UZO-ax-yq8">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OYq-lk-LLX">
+                                <rect key="frame" x="315" y="77" width="19" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="D1b-nB-JI6"/>
+                                    <constraint firstAttribute="width" constant="13" id="ate-af-Kka"/>
+                                </constraints>
+                                <animations/>
+                                <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" id="aM3-jI-yvR"/>
+                                <connections>
+                                    <action selector="frameStepperAction:" target="XfG-lQ-9wD" id="6Jn-A0-ajV"/>
+                                </connections>
+                            </stepper>
+                            <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-XE-QRW">
+                                <rect key="frame" x="315" y="49" width="19" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="GUj-FW-Ng9"/>
+                                    <constraint firstAttribute="height" constant="22" id="qhj-hy-bAt"/>
+                                </constraints>
+                                <animations/>
+                                <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" id="Oau-gA-WAb"/>
+                                <connections>
+                                    <action selector="offsetStepperAction:" target="XfG-lQ-9wD" id="Yi6-LI-lyX"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PRV-L6-WEl" secondAttribute="trailing" constant="20" id="34C-je-bod"/>
+                            <constraint firstAttribute="trailing" secondItem="OYq-lk-LLX" secondAttribute="trailing" constant="20" id="6Bf-IG-ePm"/>
                             <constraint firstItem="jbK-qU-NWD" firstAttribute="top" secondItem="PRV-L6-WEl" secondAttribute="bottom" constant="13" id="B54-fO-9VK"/>
+                            <constraint firstItem="btv-nt-0XW" firstAttribute="leading" secondItem="jbK-qU-NWD" secondAttribute="trailing" constant="8" id="F4M-MO-Kd7"/>
                             <constraint firstItem="jbK-qU-NWD" firstAttribute="leading" secondItem="TS0-xo-32g" secondAttribute="trailing" constant="26" id="G1b-z3-SeF"/>
                             <constraint firstItem="PRV-L6-WEl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="J0H-LM-UPX"/>
+                            <constraint firstItem="If0-6w-9aZ" firstAttribute="leading" secondItem="eXc-fl-f6E" secondAttribute="trailing" constant="8" id="Jg1-Cx-Hht"/>
+                            <constraint firstItem="btv-nt-0XW" firstAttribute="top" secondItem="PRV-L6-WEl" secondAttribute="bottom" constant="8" id="KOv-iO-Wvj"/>
+                            <constraint firstItem="gJG-XE-QRW" firstAttribute="top" secondItem="OYq-lk-LLX" secondAttribute="bottom" constant="6" id="NiC-nh-tbe"/>
                             <constraint firstItem="eXc-fl-f6E" firstAttribute="top" secondItem="jbK-qU-NWD" secondAttribute="bottom" constant="11" id="PRQ-Uu-b6o"/>
-                            <constraint firstItem="If0-6w-9aZ" firstAttribute="leading" secondItem="eXc-fl-f6E" secondAttribute="trailing" constant="8" id="S3y-Oa-pA0"/>
                             <constraint firstItem="Udu-lB-EWd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Uhb-Hg-8Je"/>
-                            <constraint firstItem="btv-nt-0XW" firstAttribute="top" secondItem="PRV-L6-WEl" secondAttribute="bottom" constant="8" id="Z4b-Z7-LKh"/>
                             <constraint firstItem="eXc-fl-f6E" firstAttribute="leading" secondItem="TS0-xo-32g" secondAttribute="trailing" constant="26" id="cO4-MR-eD0"/>
                             <constraint firstAttribute="trailing" secondItem="6Gj-OP-cM1" secondAttribute="trailing" constant="20" id="gd7-xB-jBF"/>
-                            <constraint firstItem="If0-6w-9aZ" firstAttribute="top" secondItem="btv-nt-0XW" secondAttribute="bottom" constant="6" id="ger-8k-IW9"/>
+                            <constraint firstItem="OYq-lk-LLX" firstAttribute="leading" secondItem="btv-nt-0XW" secondAttribute="trailing" constant="3" id="gjb-Gx-D54"/>
+                            <constraint firstAttribute="trailing" secondItem="gJG-XE-QRW" secondAttribute="trailing" constant="20" id="hGG-Dx-7mv"/>
                             <constraint firstItem="PRV-L6-WEl" firstAttribute="leading" secondItem="Udu-lB-EWd" secondAttribute="trailing" constant="8" id="hLQ-d1-B9W"/>
+                            <constraint firstItem="OYq-lk-LLX" firstAttribute="top" secondItem="PRV-L6-WEl" secondAttribute="bottom" constant="8" id="hxe-J1-r5l"/>
                             <constraint firstAttribute="bottom" secondItem="6Gj-OP-cM1" secondAttribute="bottom" constant="20" id="ioY-OE-n7E"/>
                             <constraint firstItem="TS0-xo-32g" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="lRj-iK-Qsz"/>
                             <constraint firstItem="Udu-lB-EWd" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="oHk-l6-2mb"/>
-                            <constraint firstItem="btv-nt-0XW" firstAttribute="leading" secondItem="jbK-qU-NWD" secondAttribute="trailing" constant="8" id="q6W-Cl-iE8"/>
-                            <constraint firstAttribute="trailing" secondItem="If0-6w-9aZ" secondAttribute="trailing" constant="20" id="tMA-Ca-lxd"/>
-                            <constraint firstAttribute="trailing" secondItem="btv-nt-0XW" secondAttribute="trailing" constant="20" id="thp-uO-3AM"/>
+                            <constraint firstItem="gJG-XE-QRW" firstAttribute="leading" secondItem="If0-6w-9aZ" secondAttribute="trailing" constant="3" id="oRz-5g-9fN"/>
+                            <constraint firstItem="If0-6w-9aZ" firstAttribute="top" secondItem="btv-nt-0XW" secondAttribute="bottom" constant="6" id="uz7-Sf-8je"/>
                             <constraint firstItem="TS0-xo-32g" firstAttribute="top" secondItem="Udu-lB-EWd" secondAttribute="bottom" constant="13" id="wuf-SW-neu"/>
                         </constraints>
                         <animations/>
@@ -801,12 +832,15 @@
                     <connections>
                         <outlet property="convertOutlet" destination="6Gj-OP-cM1" id="TOf-LD-a1c"/>
                         <outlet property="fileNameOutlet" destination="PRV-L6-WEl" id="nko-i8-3cJ"/>
+                        <outlet property="frameStepperOutlet" destination="OYq-lk-LLX" id="DYC-vz-znZ"/>
                         <outlet property="framesOutlet" destination="btv-nt-0XW" id="Oir-fD-Rwy"/>
+                        <outlet property="offsetOutlet" destination="If0-6w-9aZ" id="Wfp-fn-Akl"/>
+                        <outlet property="offsetStepperOutlet" destination="gJG-XE-QRW" id="Zc2-xJ-o2s"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.5" y="583.5"/>
+            <point key="canvasLocation" x="130.5" y="639.5"/>
         </scene>
     </scenes>
     <resources>
