@@ -35,9 +35,12 @@ class ViewController: NSViewController, NSTextFieldDelegate
     {
         filePath = url
         fileNameOutlet.stringValue = filePath.lastPathComponent!
-        framesOutlet.enabled = true
+        
         convertOutlet.enabled = true
+        framesOutlet.enabled = true
         frameStepperOutlet.enabled = true
+        offsetOutlet.enabled = true
+        offsetStepperOutlet.enabled = true
     }
     
     override var representedObject: AnyObject?
@@ -46,6 +49,7 @@ class ViewController: NSViewController, NSTextFieldDelegate
         // Update the view, if already loaded.
         }
     }
+    
     @IBAction func frameStepperAction(sender: NSStepper)
     {
         framesOutlet.doubleValue = sender.doubleValue
@@ -56,21 +60,24 @@ class ViewController: NSViewController, NSTextFieldDelegate
         offsetOutlet.doubleValue = sender.doubleValue
     }
     
-    override func controlTextDidChange(obj: NSNotification)
+    func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool
     {
-        if(obj.object as? NSTextField == framesOutlet)
+        if(control == framesOutlet)
         {
             frameStepperOutlet.doubleValue = framesOutlet.doubleValue
         }
-        else if(obj.object as? NSTextField == offsetOutlet)
+        else if(control == offsetOutlet)
         {
             offsetStepperOutlet.doubleValue = offsetOutlet.doubleValue
         }
+        
+        return true
     }
-    
+
+
     @IBAction func convertAction(sender: AnyObject)
     {
-        let subtitleConverter = SubtitleConverter(url: filePath, rate: framesOutlet.doubleValue)
+        let subtitleConverter = SubtitleConverter(url: filePath, rate: framesOutlet.doubleValue, offset: offsetOutlet.doubleValue)
         let parsedText = subtitleConverter.convertToSrt()
         
         if(parsedText == nil)
@@ -99,5 +106,6 @@ class ViewController: NSViewController, NSTextFieldDelegate
             }
         }
     }
+
 }
 

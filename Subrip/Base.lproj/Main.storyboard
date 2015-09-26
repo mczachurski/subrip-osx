@@ -707,7 +707,7 @@
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" placeholderString="" drawsBackground="YES" id="QIY-Vq-xbk">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="tSG-Ol-6ab">
                                         <real key="minimum" value="0.0"/>
-                                        <real key="maximum" value="100"/>
+                                        <real key="maximum" value="1000"/>
                                     </numberFormatter>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>

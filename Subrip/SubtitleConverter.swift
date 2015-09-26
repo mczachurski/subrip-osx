@@ -13,15 +13,17 @@ public class SubtitleConverter
 {
     private let filePath:NSURL!
     private let frameRate:Double!
+    private let offsetSeconds:Double!
     private var orginalFileContent:String!
     private var parsedSubtitleLines:[SubtitleLine] = [SubtitleLine]()
     private var startChar: Character = "["
     private var endChar: Character = "]"
     
-    init(url:NSURL, rate:Double)
+    init(url:NSURL, rate:Double, offset:Double)
     {
         filePath = url
         frameRate = rate
+        offsetSeconds = offset
     }
     
     public func convertToSrt() -> String?
@@ -97,18 +99,20 @@ public class SubtitleConverter
             var line = item
             let subtitleLine = SubtitleLine()
             
-            if let startIndex = line.characters.indexOf(startChar) {
-                if let endIndex = line.characters.indexOf(endChar) {
-                    
+            if let startIndex = line.characters.indexOf(startChar)
+            {
+                if let endIndex = line.characters.indexOf(endChar)
+                {   
                     let number = line.substringWithRange(Range<String.Index>(start: startIndex.advancedBy(1), end: endIndex))
                     line = line.substringFromIndex(endIndex.advancedBy(1))
                     subtitleLine.startFrame = Int(number)
                 }
             }
             
-            if let startIndex = line.characters.indexOf(startChar) {
-                if let endIndex = line.characters.indexOf(endChar) {
-                    
+            if let startIndex = line.characters.indexOf(startChar)
+            {
+                if let endIndex = line.characters.indexOf(endChar)
+                {
                     let number = line.substringWithRange(Range<String.Index>(start: startIndex.advancedBy(1), end: endIndex))
                     line = line.substringFromIndex(endIndex.advancedBy(1))
                     subtitleLine.endFrame = Int(number)
@@ -153,8 +157,8 @@ public class SubtitleConverter
     
     private func getFormattedTime(frame:Int) -> String
     {
-        let startSeconds = Double(frame) / frameRate
-        
+        var startSeconds = Double(frame) / frameRate
+        startSeconds += offsetSeconds
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm:ss,SSS"
