@@ -730,13 +730,13 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jbK-qU-NWD">
-                                <rect key="frame" x="116" y="80" width="82" height="17"/>
+                                <rect key="frame" x="98" y="80" width="100" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="2uN-4I-CVl"/>
-                                    <constraint firstAttribute="width" constant="78" id="zTW-tx-ikZ"/>
+                                    <constraint firstAttribute="width" constant="96" id="zTW-tx-ikZ"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Frames:" id="ZAH-S1-UPb">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Frames (fr/sec):" id="ZAH-S1-UPb">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -765,13 +765,13 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="subimage" id="WmD-YZ-ibX"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-fl-f6E">
-                                <rect key="frame" x="116" y="52" width="82" height="17"/>
+                                <rect key="frame" x="98" y="52" width="100" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="TPV-oi-6QT"/>
+                                    <constraint firstAttribute="width" constant="96" id="TPV-oi-6QT"/>
                                     <constraint firstAttribute="height" constant="17" id="xWd-jF-om9"/>
                                 </constraints>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Offset:" id="UZO-ax-yq8">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Offset (sec):" id="UZO-ax-yq8">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -796,7 +796,7 @@
                                     <constraint firstAttribute="height" constant="22" id="qhj-hy-bAt"/>
                                 </constraints>
                                 <animations/>
-                                <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" maxValue="100" id="Oau-gA-WAb"/>
+                                <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" minValue="-10000" maxValue="10000" doubleValue="10000" id="Oau-gA-WAb"/>
                                 <connections>
                                     <action selector="offsetStepperAction:" target="XfG-lQ-9wD" id="Yi6-LI-lyX"/>
                                 </connections>
@@ -807,14 +807,14 @@
                             <constraint firstAttribute="trailing" secondItem="OYq-lk-LLX" secondAttribute="trailing" constant="20" id="6Bf-IG-ePm"/>
                             <constraint firstItem="jbK-qU-NWD" firstAttribute="top" secondItem="PRV-L6-WEl" secondAttribute="bottom" constant="13" id="B54-fO-9VK"/>
                             <constraint firstItem="btv-nt-0XW" firstAttribute="leading" secondItem="jbK-qU-NWD" secondAttribute="trailing" constant="8" id="F4M-MO-Kd7"/>
-                            <constraint firstItem="jbK-qU-NWD" firstAttribute="leading" secondItem="TS0-xo-32g" secondAttribute="trailing" constant="26" id="G1b-z3-SeF"/>
+                            <constraint firstItem="jbK-qU-NWD" firstAttribute="leading" secondItem="TS0-xo-32g" secondAttribute="trailing" constant="8" id="G1b-z3-SeF"/>
                             <constraint firstItem="PRV-L6-WEl" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="J0H-LM-UPX"/>
                             <constraint firstItem="If0-6w-9aZ" firstAttribute="leading" secondItem="eXc-fl-f6E" secondAttribute="trailing" constant="8" id="Jg1-Cx-Hht"/>
                             <constraint firstItem="btv-nt-0XW" firstAttribute="top" secondItem="PRV-L6-WEl" secondAttribute="bottom" constant="8" id="KOv-iO-Wvj"/>
                             <constraint firstItem="gJG-XE-QRW" firstAttribute="top" secondItem="OYq-lk-LLX" secondAttribute="bottom" constant="6" id="NiC-nh-tbe"/>
                             <constraint firstItem="eXc-fl-f6E" firstAttribute="top" secondItem="jbK-qU-NWD" secondAttribute="bottom" constant="11" id="PRQ-Uu-b6o"/>
                             <constraint firstItem="Udu-lB-EWd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Uhb-Hg-8Je"/>
-                            <constraint firstItem="eXc-fl-f6E" firstAttribute="leading" secondItem="TS0-xo-32g" secondAttribute="trailing" constant="26" id="cO4-MR-eD0"/>
+                            <constraint firstItem="eXc-fl-f6E" firstAttribute="leading" secondItem="TS0-xo-32g" secondAttribute="trailing" constant="8" id="cO4-MR-eD0"/>
                             <constraint firstAttribute="trailing" secondItem="6Gj-OP-cM1" secondAttribute="trailing" constant="20" id="gd7-xB-jBF"/>
                             <constraint firstItem="OYq-lk-LLX" firstAttribute="leading" secondItem="btv-nt-0XW" secondAttribute="trailing" constant="3" id="gjb-Gx-D54"/>
                             <constraint firstAttribute="trailing" secondItem="gJG-XE-QRW" secondAttribute="trailing" constant="20" id="hGG-Dx-7mv"/>
