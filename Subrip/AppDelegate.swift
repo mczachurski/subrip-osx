@@ -10,7 +10,7 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate
-{
+{    
     func applicationDidFinishLaunching(aNotification: NSNotification)
     {
         // Insert code here to initialize your application
@@ -19,6 +19,13 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func applicationWillTerminate(aNotification: NSNotification)
     {
         // Insert code here to tear down your application
+    }
+    
+    func application(sender: NSApplication, openFile filename: String) -> Bool
+    {
+        let document = NSURL(fileURLWithPath: filename)
+        chooseFileInMainView(document)
+        return true
     }
 
     @IBAction func openFileAction(sender: AnyObject)
@@ -35,11 +42,17 @@ class AppDelegate: NSObject, NSApplicationDelegate
         panel.beginWithCompletionHandler { (result) -> Void in
             if(result == NSFileHandlingPanelOKButton)
             {
-                let controller = NSApplication.sharedApplication().windows.first!.contentViewController as! ViewController
-                controller.setURL(panel.URL!)
+                let document = panel.URL!
+                self.chooseFileInMainView(document)
             }
         }
     }
-
+    
+    private func chooseFileInMainView(document:NSURL)
+    {
+        let controller = NSApplication.sharedApplication().windows.first!.contentViewController as! ViewController
+        controller.setURL(document)
+        NSDocumentController.sharedDocumentController().noteNewRecentDocumentURL(document)
+    }
 }
 
